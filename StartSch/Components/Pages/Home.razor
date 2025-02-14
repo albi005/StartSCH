@@ -11,30 +11,7 @@
     <h2>Nyitások</h2>
     @foreach (var opening in _openings)
     {
-        <article style="margin-bottom: 32px">
-            <h3 style="margin: 0 0 12px 0">
-                @opening.Title
-            </h3>
-            <div style="margin-bottom: 12px">
-                @foreach (var group in opening.Groups)
-                {
-                    <span class="tag">
-                        @group.PincerName
-                    </span>
-                }
-            </div>
-
-            @if (opening.StartUtc < utcNow)
-            {
-                <span style="font-weight: bold; color: var(--md-sys-color-tertiary)">
-                    @Utils.FormatDateRange(opening.StartUtc, opening.EndUtc)
-                </span>
-            }
-            else
-            {
-                @Utils.FormatDateRange(opening.StartUtc, opening.EndUtc)
-            }
-        </article>
+        <EventPreview Event="@opening"/>
     }
     @if (!_openings.Any())
     {

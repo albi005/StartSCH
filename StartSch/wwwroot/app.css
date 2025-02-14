@@ -47,6 +47,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, span, div, input, button, textarea {
 body {
     background: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
+    font-family: "Vollkorn", serif;
+}
+
+p{
+    font-family: "Roboto", sans-serif;
 }
 
 a {
